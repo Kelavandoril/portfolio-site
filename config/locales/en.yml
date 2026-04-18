@@ -1,0 +1,9 @@
+en:
+  nav:
+    home: Home
+    projects: Projects
+    about: About Me
+    resume: Resume
+    contact: Contact
+  project:
+    detailed: See More

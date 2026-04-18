@@ -1,0 +1,8 @@
+<div id="projects">
+  <% @projects.each do |project| %>
+    <div>
+      <%= project.title %>
+      <%= link_to t('project.detailed'), project_path(project.id) %>
+    </div>
+  <% end %>
+</div>
