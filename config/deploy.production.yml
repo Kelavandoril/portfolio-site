@@ -1,0 +1,24 @@
+registry:
+  server: "ghcr.io"
+  username: Kelavandoril
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+servers:
+  web:
+    - 172.234.254.160
+
+ssh:
+  user: deployer
+  keys_only: true
+  key_data:
+    - SSH_PRIVATE_KEY
+
+proxy:
+  ssl: true
+  host: www.kpasqualoni.com
+  response_timeout: 60
+  healthcheck:
+    path: /up
+    interval: 2
+    timeout: 5

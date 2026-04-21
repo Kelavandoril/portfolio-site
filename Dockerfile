@@ -1,16 +1,5 @@
-# syntax=docker/dockerfile:1
-# check=error=true
-
-# This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t portfolio .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name portfolio portfolio
-
-# For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
-
-# Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.4.9
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
-
 # Rails app lives here
 WORKDIR /rails
 
@@ -47,6 +36,8 @@ RUN bundle install && \
 # Copy application code
 COPY . .
 
+RUN sed -i 's/\r$//' bin/*
+
 # Precompile bootsnap code for faster boot times.
 # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
 RUN bundle exec bootsnap precompile -j 1 app/ lib/
@@ -59,6 +50,7 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
+LABEL org.opencontainers.image.source=https://github.com/Kelavandoril/portfolio-site
 
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
