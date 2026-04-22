@@ -6,7 +6,7 @@ registry:
 
 servers:
   web:
-    - 172.234.254.160
+    - <%= ENV["SERVER_IP"] %>
 
 ssh:
   user: deployer
