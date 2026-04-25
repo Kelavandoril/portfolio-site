@@ -1,0 +1,22 @@
+name: CD (PROD)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prod-deploy:
+    permissions:
+      contents: read
+      packages: write
+    environment:
+      name: production
+    runs-on: ubuntu-latest
+    env:
+      KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      SERVER_IP: ${{ secrets.SERVER_IP }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6

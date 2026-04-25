@@ -1,4 +1,4 @@
-name: CD
+name: CD (DEV)
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
           cache-binary: 'true'
 
       - name: Prepare image
-        run: gem install kamal && kamal build push -d production -q
+        run: gem install kamal && kamal build push -d dev -q
 
       - name: Application deployment
-        run: kamal redeploy -P -d production -q
+        run: kamal redeploy -P -d dev -q
