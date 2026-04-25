@@ -10,7 +10,7 @@ jobs:
       contents: read
       packages: write
     environment:
-      name: production
+      name: dev
     runs-on: ubuntu-latest
     env:
       KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
