@@ -1,5 +1,8 @@
 registry:
-  server: "localhost:5555"
+  server: "ghcr.io"
+  username: Kelavandoril
+  password:
+    - KAMAL_REGISTRY_PASSWORD
 
 servers:
   web:
