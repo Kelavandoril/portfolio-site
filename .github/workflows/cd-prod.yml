@@ -45,7 +45,7 @@ jobs:
 
       - name: Set up Docker Buildx
         if: steps.check_sha.outputs.exists_in_develop == 'true'
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       - name: Verify image
         id: image_tag
