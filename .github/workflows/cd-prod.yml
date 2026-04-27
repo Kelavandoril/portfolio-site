@@ -2,6 +2,10 @@ name: CD (PROD)
 
 on:
   workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: 'The full commit SHA to promote'
+        required: true
 
 jobs:
   prod-deploy:
@@ -20,3 +24,41 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check SHA
+        id: check_sha
+        run: |
+          git fetch origin develop
+          if git merge-base --is-ancestor ${{ inputs.commit_sha }} origin/develop; then
+            echo "exists_in_develop=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists_in_develop=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Ruby
+        if: steps.check_sha.outputs.exists_in_develop == 'true'
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Set up Docker Buildx
+        if: steps.check_sha.outputs.exists_in_develop == 'true'
+        uses: docker/setup-buildx-action@v3
+
+      - name: Verify image
+        id: image_tag
+        if: steps.check_sha.outputs.exists_in_develop == 'true'
+        run: |
+          IMAGE_INFO=$(docker images -a --filter=reference="ghcr.io/kelavandoril/portfolio-web-app:$COMMIT_SHA" --format="{{.ID}}")
+          if [ -z "${{ IMAGE_INFO }}" ]; then
+            echo "${{IMAGE_INFO}}}" >> $GITHUB_OUTPUT
+          else
+            echo "ERROR" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Retag image
+        if: steps.verify_image.outputs.image_tag != 'ERROR'
+        run: |
+          docker tag steps.verify_image.outputs.image_tag ghcr.io/kelavandoril/portfolio-web-app:latest-production
