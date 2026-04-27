@@ -9,6 +9,10 @@ default: &default
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
+development:
+  <<: *default
+  database: storage/local.sqlite3
+
 dev:
   primary:
     <<: *default
