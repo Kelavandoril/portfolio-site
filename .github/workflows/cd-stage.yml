@@ -1,4 +1,4 @@
-name: CD (DEV)
+name: CD (stage)
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
       contents: read
       packages: write
     environment:
-      name: dev
+      name: stage
     runs-on: ubuntu-latest
     env:
       KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
@@ -33,7 +33,7 @@ jobs:
           cache-binary: 'true'
 
       - name: Prepare image
-        run: gem install kamal && kamal build push -d dev -q
+        run: gem install kamal && kamal build push -d stage -q
 
       - name: Application deployment
-        run: kamal redeploy -P -d dev -q
+        run: kamal redeploy -P -d stage -q
