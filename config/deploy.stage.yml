@@ -9,7 +9,7 @@ servers:
     - <%= ENV["SERVER_IP"] %>
 
 builder:
-  dockerfile: Dockerfile.dev
+  dockerfile: Dockerfile.stage
 
 volumes:
   - "/var/lib/portfolio-db:/rails/storage"
@@ -22,7 +22,7 @@ ssh:
 
 proxy:
   ssl: true
-  host: dev.kpasqualoni.com
+  host: stage.kpasqualoni.com
   response_timeout: 60
   healthcheck:
     path: /up

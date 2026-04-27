@@ -13,7 +13,7 @@ development:
   <<: *default
   database: storage/local.sqlite3
 
-dev:
+stage:
   primary:
     <<: *default
     database: storage/dev.sqlite3
