@@ -5,3 +5,7 @@ jp:
     about: 自己紹介
     resume: 履歴書
     contact: 連絡先
+  project:
+    detailed: もっと聞く >>
+  contact:
+    linkText: 行こう
