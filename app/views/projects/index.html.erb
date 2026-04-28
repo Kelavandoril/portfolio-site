@@ -1,8 +1,14 @@
-<div id="projects">
-  <% @projects.each do |project| %>
-    <div>
+<% @projects.each do |project| %>
+  <div class="grid grid-flow-col grid-rows-[1fr_auto_1fr_1fr] grid-cols-3">
+    <div class="row-start-1 col-span-3 font-bold">
       <%= project.title %>
+    </div>
+    <div class="row-start-2 col-span-3">
+      <%= project.description %>
+    </div>
+    <div class="row-start-3 col-start-3 col-span-1 justify-self-end">
       <%= link_to t('project.detailed'), project_path(project.id) %>
     </div>
-  <% end %>
-</div>
+    <hr class="row-start-4 col-start-1 col-span-3">
+  </div>
+<% end %>
