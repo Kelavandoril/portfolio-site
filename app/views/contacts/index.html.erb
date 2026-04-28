@@ -1,1 +1,16 @@
-<p>Placeholder</p>
+<div class="flex flex-wrap place-content-center md:place-content-start">
+  <% @contacts.each do |contact| %>
+    <div class="flex basis-xs p-5 grow-0 shrink-0">
+      <div class="relative bg-neutral-primary-soft max-w-xs w-full p-6 border border-default rounded-base shadow-xs">
+        <div class="flex flex-col items-center">
+          <%#= image_tag contact.logo, class: "w-24 h-24 mb-6 rounded-full" %>
+          <h5 class="mb-0.5 text-xl font-semibold tracking-tight text-heading"><%= contact.username %></h5>
+          <span class="text-sm text-body"><%= contact.service_name %></span>
+          <div class="flex mt-4 md:mt-6 gap-4">
+            <%= link_to t('contact.linkText'), contact.link_url, class: "button-style inline-flex self-start w-auto text-body bg-black text-white box-border border border-default-medium hover:bg-white hover:text-heading hover:text-black focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

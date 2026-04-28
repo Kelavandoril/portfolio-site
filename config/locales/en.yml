@@ -7,3 +7,5 @@ en:
     contact: Contact
   project:
     detailed: Tell me more >>
+  contact:
+    linkText: Go
