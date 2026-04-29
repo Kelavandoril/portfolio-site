@@ -7,10 +7,11 @@ en:
     contact: Contact
   project:
     detailed: Tell me more >>
+  contact:
+    buttonText: Go
+  button:
     new: Add
     change: Edit
     delete:
       label: Delete
-      confirmation: Are you sure you want to delete this project?
-  contact:
-    buttonText: Go
+      confirmation: Are you sure?

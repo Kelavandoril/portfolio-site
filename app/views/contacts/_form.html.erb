@@ -1,0 +1,23 @@
+<%= form_with model: contact do |form| %>
+  <% if form.object.errors.any? %>
+    <p class="error"><%= form.object.errors.full_messages.first %></p>
+  <% end %>
+  <div class="grid grid-cols-2 grid-rows-5 gap-b-3 pb-2">
+    <%= form.label :service_name, class: "row-start-1 col-start-1 justify-self-end pr-5" %>
+    <%= form.text_field :service_name, class: "row-start-1 border col-start-2 h-8" %>
+    <%= form.label :link_url, class: "row-start-2 col-start-1 justify-self-end pr-5" %>
+    <%= form.text_field :link_url, class: "row-start-2 border col-start-2 h-8" %>
+    <%= form.label :username, class: "row-start-3 col-start-1 justify-self-end pr-5" %>
+    <%= form.text_field :username, class: "row-start-3 border col-start-2 h-8" %>
+    <%= form.label :logo, class: "row-start-4 col-start-1 justify-self-end pr-5" %>
+    <%= form.file_field :logo, accept: "image/*", class: "row-start-4 col-start-2 block w-full text-sm text-gray-500
+      file:mr-4 file:py-1 file:px-4
+      file:rounded-full file:border-1
+      file:text-sm file:font-semibold
+      file:bg-slate-300 file:text-black
+      hover:file:bg-blue-100" %>
+
+
+    <%= form.submit "Submit", class: "col-span-2 row-start-5 button-style justify-self-center self-start w-auto text-body bg-black text-white box-border border border-default-medium hover:bg-white hover:text-heading hover:text-black focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" %>
+  </div>
+<% end %>
