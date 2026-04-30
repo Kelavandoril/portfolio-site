@@ -14,7 +14,7 @@ class ContactMethodsController < ApplicationController
     if @contact_method.save
       redirect_to contact_methods_path
     else
-      render :new, status: :unprocessable_entity
+      render projects_path, status: :unprocessable_entity
     end
   end
 
@@ -25,7 +25,7 @@ class ContactMethodsController < ApplicationController
     if @contact_method.update(contact_params)
       redirect_to contact_methods_path
     else
-      render :edit, status: :unprocessable_entity
+      render projects_path, status: :unprocessable_entity
     end
   end
 

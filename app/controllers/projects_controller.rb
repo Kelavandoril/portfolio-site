@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to @project
     else
-      render :new, status: :unprocessable_entity
+      render projects_path, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
     if @project.update(project_params)
       redirect_to @project
     else
-      render :edit, status: :unprocessable_entity
+      render projects_path, status: :unprocessable_entity
     end
   end
 
