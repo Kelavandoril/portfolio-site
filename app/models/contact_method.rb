@@ -1,4 +1,4 @@
-class Contact < ApplicationRecord
+class ContactMethod < ApplicationRecord
   has_one_attached :logo
 
   def scrub_the_link!
