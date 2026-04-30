@@ -1,2 +1,5 @@
-<h1><%= @project.title %></h1>
-<p>Placeholder</p>
+<div class="grid grid-rows-[50px_minmax(0,1fr)] grid-cols-3">
+  <h1 class="row-start-1 col-span-3"><%= @project.title %></h1>
+  <p class="row-start-2 col-span-3"><%= @project.description %></p>
+</div>
+

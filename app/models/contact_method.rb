@@ -1,6 +1,5 @@
-class Contact < ApplicationRecord
+class ContactMethod < ApplicationRecord
   has_one_attached :logo
-
   def scrub_the_link!
     if link_url != nil
       uri = URI.parse(link_url)

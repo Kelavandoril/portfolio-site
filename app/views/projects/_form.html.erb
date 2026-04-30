@@ -1,0 +1,13 @@
+<%= form_with model: project do |form| %>
+  <% if form.object.errors.any? %>
+    <p class="error"><%= form.object.errors.full_messages.first %></p>
+  <% end %>
+  <div class="grid grid-cols-2 grid-rows-3 gap-b-3 pb-2">
+    <%= form.label :title, class: "row-start-1 col-start-1 justify-self-end pr-5" %>
+    <%= form.text_field :title, class: "border col-start-2 h-8" %>
+    <%= form.label :description, class: "row-start-2 col-start-1 justify-self-end pr-5" %>
+    <%= form.text_field :description, class: "border col-start-2 h-8" %>
+
+    <%= form.submit "Submit", class: "col-span-2 row-start-3 button-style justify-self-center self-start w-auto text-body bg-black text-white box-border border border-default-medium hover:bg-white hover:text-heading hover:text-black focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" %>
+  </div>
+<% end %>

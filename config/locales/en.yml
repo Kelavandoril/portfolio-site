@@ -4,8 +4,14 @@ en:
     projects: Projects
     about: About Me
     resume: Resume
-    contact: Contact
+    contact: Contact Methods
   project:
     detailed: Tell me more >>
   contact:
     buttonText: Go
+  button:
+    new: Add
+    change: Edit
+    delete:
+      label: Delete
+      confirmation: Are you sure?

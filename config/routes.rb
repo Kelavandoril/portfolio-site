@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  namespace :admin do
+      resources :contact_methods
+      resources :projects
+      resources :sessions
+      resources :users
+
+      root to: "projects#index"
+    end
+  resource :session
+  resources :passwords, param: :token
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
@@ -8,8 +17,7 @@ Rails.application.routes.draw do
   root to: "welcome#index"
   resources :projects
   get "/about" => "about#info", as: :about_info
-  get "/resume" => "resume#info", as: :resume_info
-  resources :contacts
+  resources :contact_methods
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
