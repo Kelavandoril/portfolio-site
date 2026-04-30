@@ -39,6 +39,6 @@ class ContactMethodsController < ApplicationController
       @contact_method = ContactMethod.find(params[:id])
     end
     def contact_params
-      params.expect(contact_method: [:service_name, :link_url, :username, :logo ])
+      params.expect(contact_method: [ :service_name, :link_url, :username, :logo ])
     end
 end

@@ -44,5 +44,4 @@ class ProjectsController < ApplicationController
     def project_params
       params.expect(project: [ :title, :description ])
     end
-
 end

@@ -13,7 +13,7 @@ class UserDashboard < Administrate::BaseDashboard
     password_digest: Field::String,
     sessions: Field::HasMany,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

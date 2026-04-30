@@ -42,7 +42,7 @@ class ContactMethodsControllerTest < ActionDispatch::IntegrationTest
     sign_in_as(users(:admin))
 
     assert_difference("ContactMethod.count", 1) do
-      post contact_methods_url, params: { contact_method: { service_name: "SomeService", username: "someusername", link_url: "https://linkedin.com", logo: fixture_file_upload('test/fixtures/files/linkedin.png', 'image/png') } }
+      post contact_methods_url, params: { contact_method: { service_name: "SomeService", username: "someusername", link_url: "https://linkedin.com", logo: fixture_file_upload("test/fixtures/files/linkedin.png", "image/png") } }
     end
 
     assert_redirected_to contact_methods_url
