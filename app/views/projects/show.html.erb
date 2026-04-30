@@ -1,9 +1,5 @@
 <div class="grid grid-rows-[50px_minmax(0,1fr)] grid-cols-3">
   <h1 class="row-start-1 col-span-3"><%= @project.title %></h1>
   <p class="row-start-2 col-span-3"><%= @project.description %></p>
-  <% if authenticated? %>
-    <%= link_to t('button.change'), edit_project_path, class: "row-start-3 col-start-1 col-span-3 text-center button-style self-start w-auto text-body bg-black text-white box-border border border-default-medium hover:bg-white hover:text-heading hover:text-black focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" %>
-    <%= button_to t('button.delete.label'), @project, method: :delete, data: { turbo_confirm: t('button.delete.confirmation') }, form_class: "row-start-4 col-start-1 col-span-3 text-center button-style self-start w-auto text-body bg-black text-white box-border border border-default-medium hover:bg-white hover:text-heading hover:text-black focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" %>
-  <% end %>
 </div>
 

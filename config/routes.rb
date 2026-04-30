@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :contact_methods
+      resources :projects
+      resources :sessions
+      resources :users
+
+      root to: "projects#index"
+    end
   resource :session
   resources :passwords, param: :token
 
