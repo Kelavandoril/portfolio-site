@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ContactTest < ActiveSupport::TestCase
+class ContactMethodTest < ActiveSupport::TestCase
   test "should not save new contact_method without logo" do
     contact = ContactMethod.new(username: "Test username", service_name: "Test service name")
     assert_not contact.save
