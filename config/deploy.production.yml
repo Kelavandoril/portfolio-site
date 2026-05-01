@@ -12,7 +12,7 @@ builder:
   dockerfile: Dockerfile
 
 volumes:
-  - "/var/lib/portfolio-db:/rails/storage"
+  - /var/lib/portfolio-db:/rails/storage:z
 
 ssh:
   user: deployer

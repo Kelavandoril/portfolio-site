@@ -43,6 +43,7 @@ RUN sed -i 's/\r$//' bin/*
 RUN bundle exec bootsnap precompile -j 1 app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails tailwindcss:build
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 
@@ -55,12 +56,16 @@ LABEL org.opencontainers.image.source=https://github.com/Kelavandoril/portfolio-
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash
-USER 1000:1000
 
 # Copy built artifacts: gems, application
 COPY --chown=rails:rails --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --chown=rails:rails --from=build /rails /rails
 
+RUN chown -R rails:rails /rails/public /rails/tmp /rails/log && \
+    find /rails/public -type d -exec chmod 755 {} \; && \
+    find /rails/public -type f -exec chmod 644 {} \;
+
+USER 1000:1000
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
