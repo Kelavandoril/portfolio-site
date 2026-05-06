@@ -5,3 +5,11 @@
     --color-primary-hover: #9898d2;
     --color-primary-contrast: #ffffff;
 }
+
+[lang="jp"] {
+    font-family: 游ゴシック体,Yu Gothic,YuGothic,Hiragino Kaku Gothic ProN,Hiragino Sans,メイリオ,Meiryo,ＭＳ Ｐゴシック,Arial,Helvetica,Verdana,sans-serif;
+}
+
+[lang="en"] {
+    @apply font-[Helvetica,sans-serif]
+}
