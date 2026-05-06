@@ -12,16 +12,16 @@ jp:
   welcome:
     description:
       header: ようこそ！
-      info: "Placeholder"
+      info: まだなにもないです。
     technology:
-      header: Technologies Used
+      header: 技術で作りました
       info: |
         This site was built using Ruby on Rails 8. I specifically learned Ruby and Rails to build this
         site, since I've always been curious. As a part of the stack, I used the following technologies or frameworks:
       list:
-        - SQLite
-        - Tailwind CSS
-        - Kamal
+        - SQLite 「エスキューライト」
+        - Tailwind CSS 「テイルウィンド」
+        - Kamal 「カマル」
     localization:
-      header: Localization
+      header: 地域化
       info: このウェブサイトに英語と日本語で使えます。
