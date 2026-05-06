@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :contact_methods
       resources :projects
       resources :sessions
       resources :users
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
   root to: "welcome#index"
   resources :projects
   get "/about" => "about#info", as: :about_info
-  resources :contact_methods
+  resources :contact
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
