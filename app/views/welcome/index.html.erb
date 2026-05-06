@@ -1,1 +1,19 @@
-<p>Placeholder</p>
+<div class="grid grid-rows-3 gap-3 grid-cols-1 md:grid-rows-2 md:grid-cols-2">
+  <div class="row-start-1 md:col-start-1 md:col-span-2 border-b">
+    <h1 class="font-bold"><%= t('welcome.description.header') %></h1>
+    <span><%= t('welcome.description.info') %></span>
+  </div>
+  <div class="row-start-2 border-b md:border-b-0 md:border-r md:col-start-1 md:row-start-2">
+    <h1 class="font-bold"><%= t('welcome.technology.header') %></h1>
+    <span><%= t('welcome.technology.info') %></span>
+    <ul class="list-disc list-inside">
+      <% t('welcome.technology.list').each do |tech| %>
+        <li><%= tech %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="row-start-3 md:col-start-2 md:row-start-2">
+    <h1 class="font-bold"><%= t('welcome.localization.header') %></h1>
+    <span><%= t('welcome.localization.info') %></span>
+  </div>
+</div>

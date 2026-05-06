@@ -14,3 +14,22 @@ en:
     delete:
       label: Delete
       confirmation: Are you sure?
+  welcome:
+    description:
+      header: Welcome!
+      info: |
+        Hey, my name is Keegan Pasqualoni. I'm a software engineer based in Colorado. This website details who I am,
+        what I do, and some of the projects I've worked on. If you have any questions, suggestions, or just want to
+        say hi, see the form over on the contact page!
+    technology:
+      header: Technologies Used
+      info: |
+        This site was built using Ruby on Rails 8. I specifically learned Ruby and Rails to build this
+        site, since I've always been curious. As a part of the stack, I used the following technologies or frameworks:
+      list:
+        - SQLite
+        - Tailwind CSS
+        - Kamal
+    localization:
+      header: Localization
+      info: "This site offers two localization options natively: English and Japanese. You can change to either one using the settings gear in the top right."

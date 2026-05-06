@@ -9,3 +9,19 @@ jp:
     detailed: もっと聞く >>
   contact:
     buttonText: 行こう
+  welcome:
+    description:
+      header: ようこそ！
+      info: "Placeholder"
+    technology:
+      header: Technologies Used
+      info: |
+        This site was built using Ruby on Rails 8. I specifically learned Ruby and Rails to build this
+        site, since I've always been curious. As a part of the stack, I used the following technologies or frameworks:
+      list:
+        - SQLite
+        - Tailwind CSS
+        - Kamal
+    localization:
+      header: Localization
+      info: このウェブサイトに英語と日本語で使えます。
