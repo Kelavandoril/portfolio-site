@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Portfolio">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="view-transition" content="same-origin" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,10 +21,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
-    <div class="py-2 px-5">
-      <%= yield %>
+  <body lang="<%= I18n.locale %>" class="flex flex-col min-h-screen">
+    <div>
+      <%= render 'layouts/navbar' %>
+      <main class="flex-grow p-5">
+        <%= yield %>
+      </main>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
