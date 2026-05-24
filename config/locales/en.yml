@@ -6,6 +6,51 @@ en:
     contact: Contact
   project:
     detailed: Tell me more >>
+  about:
+    whoami:
+      header: Who am I?
+      info: |
+        I'm currently a junior software engineer at Oracle. In my day-to-day,
+        I work on cloud applications that assist customers
+        in resolving hardware issues via automation. I also serve as the scrum master of my team.
+    proficiencies:
+      header: Proficiencies
+      info: These are some of the skills I use almost every day and have become well-versed in using.
+      list:
+        - Java
+        - Requirement elicitation
+        - Docker & Kubernetes
+        - Project management
+        - Architectural design
+        - Software testing
+    interests:
+      header: Interests
+      info: Some of these items I use at work, but mostly pertain to hobby interests.
+      list:
+        - Database administration
+        - Networking
+        - Home automation
+        - Cryptography
+    work-ethic:
+      header: Work Ethic
+      info: |
+        I could write about how I would try to reach the perfect design to write good software, or how I need to use certain
+        methodologies in order
+        for a project to be successful. However, I don't believe that's the point. While good design and working
+        methodologies are important (both things I like a lot!)
+        My favorite part about working as a software engineer is how almost
+        every company and project have unique requirements and use cases for their applications. Figuring out how these
+        things work from top to bottom, and adding onto it, is really what drives me to keep going.
+    other:
+      header: Non-technical interests and hobbies
+      info: |
+        Outside of my life as an engineer, I have a few other interests and hobbies that I enjoy doing. Here are my
+        favorite things to do:
+      list:
+        - Cooking and baking
+        - Studying Japanese
+        - Gardening
+        - Reading
   contact:
     buttonText: Go
   button:
